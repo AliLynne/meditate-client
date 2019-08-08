@@ -32,5 +32,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://us-central1-meditate-46519.cloudfunctions.net/app"
+  "proxy": "https://us-central1-meditate-46519.cloudfunctions.net/app",
+  "devDependencies": {
+    "firebase-tools": "^7.2.2"
+  }
 }
