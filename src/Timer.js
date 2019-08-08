@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
-import moment from 'moment'
-
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import { Typography, Button, Switch, FormControlLabel } from '@material-ui/core';
 
 import axios from 'axios'
-const URL = `/startSession`
 
 class Timer extends Component {
   state = {
@@ -59,7 +56,7 @@ class Timer extends Component {
       .catch(err => console.error(err))
   }
   render() {
-    const { timerTime, timerOn, timerStart } = this.state;
+    const { timerTime } = this.state;
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
