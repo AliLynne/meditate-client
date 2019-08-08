@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chip, Icon, TableRow, TableCell} from '@material-ui/core'
+import { TableRow, TableCell} from '@material-ui/core'
 import CheckCircleOutline from '@material-ui/icons/CheckCircleOutline'
 import moment from 'moment'
 
