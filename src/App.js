@@ -4,13 +4,11 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 
 import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 import Navbar from './Navbar'
 import Sessions from './Sessions'
 import Timer from './Timer'
-
-import Axios from 'axios';
-Axios.defaults.baseURL = `https://us-central1-meditate-46519.cloudfunctions.net/app`
 
 
 
@@ -38,23 +36,21 @@ const theme = {
 const myTheme = createMuiTheme(theme)
 
 class App extends React.Component {
-  constructor() {
+  constructor(){
     super()
     this.state = {
-      sessions: null
+      timer: false,
     }
   }
 
-  componentDidMount() {
-    Axios.get('/getSessions')
-      .then(res => {
-        this.setState({ sessions: res.data })
-      })
-      .catch(err => console.log(err))
-
+  handleClick = () => {
+    this.setState({
+      timer: !this.state.timer
+    })
   }
 
   render() {
+    const button = this.state.timer ? <Button color="secondary" onClick={this.handleClick}>Close Timer</Button> : <Button color="secondary" onClick={this.handleClick}>Show Timer</Button>
     return (
       <MuiThemeProvider theme={myTheme}>
         <Navbar />
@@ -62,15 +58,14 @@ class App extends React.Component {
           <Grid container>
             <Grid item sm={4} />
             <Grid item sm={4}>
-              <Timer />
-              {this.state.sessions && <Sessions list={this.state.sessions}/>}
+              {button}
+              { this.state.timer && <Timer /> }
+              
+              <Sessions />
             </Grid>
             <Grid item sm={4} />
           </Grid>
         </div>
-        
-        
-        
       </MuiThemeProvider>
     );
   }

@@ -9,7 +9,7 @@ const SessionItem = (item) => {
   return (
     <TableRow>
       <TableCell>{moment(item.session.startedAt).calendar()}</TableCell>
-      <TableCell>{item.session.duration / 100000} min.</TableCell>
+      <TableCell>{item.session.duration} min</TableCell>
       <TableCell align="center">{guided}</TableCell>
     </TableRow>
   )
