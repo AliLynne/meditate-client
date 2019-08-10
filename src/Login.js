@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TextField from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
 
 class Login extends Component {
   state = {
@@ -10,12 +10,21 @@ class Login extends Component {
   render() {
     return (
       <form>
-        <TextField
-          id="standard-name"
-          label="Name"
-          value={this.state.userName}
+        <TextField 
+          id="email" 
+          name="email" 
+          type="email" 
+          label="Email"
+          value={this.state.email} 
           onChange={this.handleChange}
-          margin="normal"
+        />
+        <TextField 
+          id="password" 
+          name="password" 
+          type="password" 
+          label="Password" 
+          value={this.state.password} 
+          onChange={this.handleChange}
         />
       </form>
     )
