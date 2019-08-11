@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { RootContext } from './RootContext'
 import { AppBar, Button, Toolbar, Typography } from '@material-ui/core'
 
 const Navbar = () => {
-  const { auth, setAuth, showLogin, setShowLogin, comp, setComp } = useContext(RootContext)
+  const { showLogin, setShowLogin } = useContext(RootContext)
 
 
-  const toggleComp = (component) => {
-    setComp(component)
-  }
+  // const toggleComp = (component) => {
+  //   setComp(component)
+  // }
 
   const toggleLogin = () => setShowLogin(!showLogin)
 
