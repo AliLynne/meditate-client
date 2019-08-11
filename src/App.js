@@ -4,14 +4,11 @@ import { RootContext } from './RootContext'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 
-
 import Grid from '@material-ui/core/Grid'
 
 import Login from './Login'
 import Navbar from './Navbar'
 import MeditationWidget from './MeditationWidget'
-
-
 
 const theme = {
   palette: {
@@ -36,8 +33,6 @@ const theme = {
 
 const myTheme = createMuiTheme(theme)
 
-
-
 const App = () => {
 
   const logout = () => {
@@ -59,12 +54,10 @@ const App = () => {
               <MeditationWidget/>
             </Grid>
             <Grid item sm={4}>
-              
+              Stats coming soon...
             </Grid>
           </Grid>
         </div>
-      
-          
       </MuiThemeProvider>
     );
 }

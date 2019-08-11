@@ -6,6 +6,8 @@ export const RootContext = React.createContext()
 export default ({ children }) => {
   const [auth, setAuth] = useState(false)
   const [message, setMessage] = useState('')
+  const [showLogin, setShowLogin] = useState(false)
+  const [comp, setComp] = useState('sessions')
 
   const checkAuth = () => {
     const token = localStorage.FBIdToken
@@ -34,7 +36,11 @@ export default ({ children }) => {
     auth,
     setAuth,
     message,
-    setMessage
+    setMessage,
+    showLogin,
+    setShowLogin,
+    comp,
+    setComp
   }
 
   return (
