@@ -5,15 +5,25 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import { Typography, Button, Switch, FormControlLabel } from '@material-ui/core';
 
+import SaveButton from './SaveButton'
+
 import axios from 'axios'
 
 class Timer extends Component {
-  state = {
-    timerOn: false,
-    timerStart: 0,
-    timerTime: 0,
-    guided: false
-  };
+  constructor(props){
+    super(props)
+
+    this.state = {
+      timerOn: false,
+      timerStart: 0,
+      timerTime: 0,
+      guided: false,
+      auth: this.props.auth,
+      message: ''
+    }
+  }
+
+ 
 
   startTimer = () => {
     this.setState({
@@ -56,6 +66,7 @@ class Timer extends Component {
       .catch(err => console.error(err))
   }
   render() {
+    console.log(this.state.auth)
     const { timerTime } = this.state;
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
@@ -96,9 +107,7 @@ class Timer extends Component {
                 }
               label="Guided"
             />
-            <Button onClick={this.handleSave} variant="contained" color="primary">
-              Save
-            </Button>
+            <SaveButton click={this.handleSave} />
           </CardActions>
           
         </CardContent>

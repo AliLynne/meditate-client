@@ -36,7 +36,7 @@ class Sessions extends Component {
         <TableBody>
           {
             this.state.sessions && this.state.sessions.map(item => {
-              console.log(item)
+              
               return <SessionItem key={item.sessionId} session={item} />
             })
           }
