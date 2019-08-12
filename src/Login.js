@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   textField: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
     marginRight: "auto",
     marginLeft: "auto"
   },
@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1)
   },
   button: {
-    marginTop: theme.spacing(1)    
+    marginTop: theme.spacing(2),
+    marginRight: "auto",
+    marginLeft: "auto" 
   }
 }))
 

@@ -13,15 +13,15 @@ import MeditationWidget from './MeditationWidget'
 const theme = {
   palette: {
     primary: {
-      dark: '#a84466',
-      main: '#f06292',
-      light: '#f381a7',
+      dark: '#752f47',
+      main: '#a84466',
+      light: '#b96984',
       contrastText: '#fff'
     },
     secondary: {
-      dark: '#7d5fb2',
-      main: '#b388ff',
-      light: '#c29fff',
+      dark: '#57427c',
+      main: '#7d5fb2',
+      light: '#977fc1',
       contrastText: '#fff'
     },
     error: {

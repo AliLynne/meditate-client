@@ -24,6 +24,7 @@ class Sessions extends Component {
   }
 
   render() {
+    
     return (
       <Table>
         <TableHead>
@@ -34,7 +35,9 @@ class Sessions extends Component {
           </TableRow>
         </TableHead>
         <TableBody>
+          
           {
+
             this.state.sessions && this.state.sessions.map(item => {
               
               return <SessionItem key={item.sessionId} session={item} />
